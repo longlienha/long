@@ -16,6 +16,17 @@ def getListHouse(file):
         oneHouse.area = float(areaConvert(sheet.cell_value(index,13)))
         oneHouse.timeTranfer = yearConvert(sheet.cell_value(index,18))
         oneHouse.priceTranfer = sheet.cell_value(index,20)
+        oneHouse.shape = shapeConvert(sheet.cell_value(index, 14))
+        oneHouse.direction = directionConvert(sheet.cell_value(index, 15))
+        oneHouse.Characteristics = Characteristics(sheet.cell_value(index, 37))
+        oneHouse.limit = limit(sheet.cell_value(index, 25))
+        oneHouse.roadHouse = sheet.cell_value(index, 22)
+        oneHouse.landPosition = sheet.cell_value(index, 21)
+        oneHouse.serviceQuanlity = serviceQuanlity(sheet.cell_value(index, 47))
+        oneHouse.placesToNear = placesToNear(sheet.cell_value(index, 45))
+        oneHouse.farFromCity = sheet.cell_value(index, 39)
+        oneHouse.farFromDistrict = sheet.cell_value(index, 40)
+        oneHouse.farFromPark = sheet.cell_value(index, 42)
         listHouse.append(oneHouse)
 
     return listHouse

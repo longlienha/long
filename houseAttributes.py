@@ -7,6 +7,14 @@ class House:
         self.direction = float
         self.timeTranfer = float
         self.priceTranfer = float
+        self.landPosition =  float
+        self.roadHouse = float
+        self.limit = float
+        self.Characteristics = float
+        self.serviceQuanlity = float
+        self.placesToNear = float
+        self.farFromCity = float
+        self.farFromDistrict = float
+        self.farFromPark = float
 
-    def info(self):
-        return 
+
