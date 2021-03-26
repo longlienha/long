@@ -16,5 +16,14 @@ class House:
         self.farFromCity = float
         self.farFromDistrict = float
         self.farFromPark = float
+        self.typeOfHouse = float
+        self.houseEntryCharacteristics = float
+        self.houseNumber = float
+        self.sanitaryCondition = float
+        self.floors = float
+        self.rooms = float
+        self.levelOfHouse = float
+        self.currentLandValue = float
+
 
 

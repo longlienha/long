@@ -62,10 +62,10 @@ def Characteristics(i):
 
 def limit(i):
     switcher={
-        'x':1,
+        'x':0,
     }
-    return switcher.get(i,0)
+    return switcher.get(i,i)
 
 for index in range(4,sheet.nrows-1,+1):
     print(index)
-    print(limit(sheet.cell_value(index, 25).lower().strip().replace(',', '').replace('.', '').replace('+', '')))
+    print(limit(sheet.cell_value(index, 17).lower().strip().replace(',', '').replace('.', '').replace('+', '')))

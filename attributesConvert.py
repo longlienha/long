@@ -2,7 +2,8 @@ def AtributesAndPrice(listHouse,listAttributes,listPrice):
     for house in listHouse:
         houseAttributes = [house.front,house.dept,house.area,house.timeTranfer]
         listAttributes.append(houseAttributes)
-        listPrice.append(float(house.priceTranfer)*float(house.area)*1000000)
+        housePrice = [float(house.priceTranfer)*float(house.area)*1000000,house.currentLandValue]
+        listPrice.append(housePrice)
 
 def yearConvert(year):
     if year == 'x':
@@ -96,3 +97,63 @@ def placesToNear(i):
         'siêu thị':6
     }
     return switcher.get(i,0)
+
+def typeOfHouse(i):
+    i.lower().strip()
+    switcher={
+        'nhà tập thể':1,
+        'bán kiên cố':2,
+        'kiên cố':3
+    }
+    return switcher.get(i,0)
+
+def HouseEntryCharacteristics(i):
+    i.lower().strip()
+    switcher={
+        'khó vào':1,
+        'thuận tiện cho xe máy':2,
+        'thuận tiện cho ô tô':3
+    }
+    return switcher.get(i,0)
+
+def SanitaryCondition(i):
+    i.lower().strip()
+    switcher={
+        'kém':1,
+        'trung bình':2,
+        'tốt':3,
+    }
+    return switcher.get(i,0)
+
+def HouseNumber(i):
+    i.lower().strip()
+    switcher={
+        'có':1,
+        'chưa':2
+    }
+    return switcher.get(i,0)
+
+def floors(i):
+    switcher={
+        'x':0
+    }
+    return switcher.get(i,i)
+
+def rooms(i):
+    switcher={
+        'x':0
+    }
+    return switcher.get(i,i)
+
+def levelOfHouse(i):
+    switcher={
+        'x':0
+    }
+    return switcher.get(i,i)
+
+def currentLandValue(i):
+    switcher={
+        'x':0,
+        '':0
+    }
+    return switcher.get(i,i)*1000000

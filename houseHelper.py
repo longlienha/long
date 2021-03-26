@@ -27,6 +27,14 @@ def getListHouse(file):
         oneHouse.farFromCity = sheet.cell_value(index, 39)
         oneHouse.farFromDistrict = sheet.cell_value(index, 40)
         oneHouse.farFromPark = sheet.cell_value(index, 42)
+        oneHouse.typeOfHouse = typeOfHouse(sheet.cell_value(index, 29))
+        oneHouse.houseEntryCharacteristics = serviceQuanlity(sheet.cell_value(index, 48))
+        oneHouse.houseNumber = HouseNumber(sheet.cell_value(index, 52))
+        oneHouse.sanitaryCondition = SanitaryCondition(sheet.cell_value(index, 50))
+        oneHouse.floors = floors(sheet.cell_value(index, 51))
+        oneHouse.rooms = rooms(sheet.cell_value(index, 31))
+        oneHouse.levelOfHouse = levelOfHouse(sheet.cell_value(index, 30))
+        oneHouse.currentLandValue = currentLandValue(sheet.cell_value(index, 17))
         listHouse.append(oneHouse)
 
     return listHouse
