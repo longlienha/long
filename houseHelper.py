@@ -2,7 +2,6 @@ import xlrd
 from houseAttributes import House
 from attributesConvert import *
 from sklearn import linear_model
-from sklearn.model_selection import train_test_split
 
 def getListHouse(file):
     # file_location = "data.xlsx"

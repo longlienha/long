@@ -1,5 +1,3 @@
-
-import math
 from numpy import float64
 
 
@@ -46,7 +44,7 @@ def shapeConvert(i):
                 'hình vuông':5.0,
                 'chữ l':2.0
              }
-    return switcher.get(i, 0)
+    return switcher.get(i, 0.0)
 
 def directionConvert(i):
     switcher={
@@ -183,7 +181,7 @@ def currentLandValue(i):
     result = switcher.get(i,i)
     if type(result) == str:
         return float(0)
-    return float64(result)*1000000
+    return float64(result)
 
 def diagram(i):
     switcher={
@@ -226,7 +224,7 @@ def streetCharacteristics(i):
         '':0.0
     }
     result = switcher.get(i,i)
-    if type(result) == str:
+    if type(result) != float:
         return 0.0
     return float(result)
 
@@ -250,6 +248,11 @@ def typeStore(i):
 
 def farFromConvert(i):
     if type(i) == str:
-        return 0.0
+        try:
+            result = float(i[None:1])
+            return result
+        except ValueError:
+            return 0.0
     else: 
         return float(i)
+    

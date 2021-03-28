@@ -68,4 +68,4 @@ def limit(i):
 
 for index in range(4,sheet.nrows-1,+1):
     print(index)
-    print(typeStore(sheet.cell_value(index, 55).lower().strip()))
+    print(farFromConvert(sheet.cell_value(index, 39)))
