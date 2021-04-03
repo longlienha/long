@@ -1,4 +1,5 @@
 import xlrd
+import numpy as np
 from houseAttributes import House
 from attributesConvert import *
 from sklearn import linear_model
@@ -70,3 +71,24 @@ def lassoRegressionModel(X_train, Y_train, X_test, Y_test):
     # Evaluating the model
     score_trained = lasso_linear.score(X_test, Y_test)
     return score_trained
+
+def MAPE(Y_actual,Y_Predicted):
+    for i in Y_actual:
+        if i[1] == 0:
+            i[1]=-1
+        elif i[0] == 0:
+            i[0]=-1
+    mape = np.mean(np.abs((Y_actual - Y_Predicted)/Y_actual))*100
+    return mape
+
+def LR_Test_predict(X_train, Y_train, X_test):
+    linear = linear_model.LinearRegression()
+    linear.fit(X_train, Y_train)
+    LR_Test_predict = linear.predict(X_test)
+    return LR_Test_predict
+
+def LS_Test_predict(X_train, Y_train, X_test):
+    lasso_linear = linear_model.Lasso(alpha=1.0)
+    lasso_linear.fit(X_train, Y_train)
+    LR_Test_predict = lasso_linear.predict(X_test)
+    return LR_Test_predict
