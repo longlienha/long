@@ -74,10 +74,10 @@ def lassoRegressionModel(X_train, Y_train, X_test, Y_test):
 
 def MAPE(Y_actual,Y_Predicted):
     for i in Y_actual:
-        if i[1] == 0:
-            i[1]=-1
-        elif i[0] == 0:
-            i[0]=-1
+        if i == 0:
+            i=-1
+        elif i == 0:
+            i=-1
     mape = np.mean(np.abs((Y_actual - Y_Predicted)/Y_actual))*100
     return mape
 

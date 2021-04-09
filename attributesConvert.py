@@ -10,7 +10,7 @@ def AtributesAndPrice(listHouse,listAttributes,listPrice):
         # house.farFromCity,house.farFromDistrict,house.farFromSchool,house.levelOfHouse,house.timeOfLandUse,house.currentPropertyValue]
         houseAttributes = house.attributes()
         listAttributes.append(houseAttributes)
-        housePrice = [float(house.priceTranfer)*float(house.area)*1000000,house.currentLandValue]
+        housePrice = float(house.priceTranfer)*float(house.area)*1000000
         listPrice.append(housePrice)
 
 def yearConvert(year):
