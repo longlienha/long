@@ -44,12 +44,12 @@ class House:
 
     def attributes(self):
         x = []
-        x.append(self.front)
+        x.append(self.front*20)
         x.append(self.dept)
-        x.append(self.area)
-        x.append(self.timeTranfer)
-        x.append(self.shape)
-        x.append(self.direction)
+        x.append(self.area*20)
+        x.append(self.timeTranfer*10)
+        x.append(self.shape*10)
+        x.append(self.direction*10)
         x.append(self.Characteristics)
         x.append(self.limit)
         x.append(self.landPosition)
@@ -58,9 +58,9 @@ class House:
         x.append(self.farFromPark)
         x.append(self.farFromCulture)
         x.append(self.typeOfHouse)
-        x.append(self.houseEntryCharacteristics)
+        # x.append(self.houseEntryCharacteristics)
         x.append(self.houseNumber)
-        x.append(self.floors)
+        # x.append(self.floors)
         x.append(self.rooms)
         x.append(self.totalFloorArea)
         x.append(self.totalArea)
@@ -79,7 +79,7 @@ class House:
         x.append(self.farFromSchool)
         x.append(self.levelOfHouse)
         x.append(self.timeOfLandUse)
-        x.append(self.currentPropertyValue)
+        # x.append(self.currentPropertyValue)
         return x
 
 

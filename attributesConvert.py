@@ -1,3 +1,4 @@
+from sys import flags
 from numpy import float64
 
 
@@ -10,7 +11,7 @@ def AtributesAndPrice(listHouse,listAttributes,listPrice):
         # house.farFromCity,house.farFromDistrict,house.farFromSchool,house.levelOfHouse,house.timeOfLandUse,house.currentPropertyValue]
         houseAttributes = house.attributes()
         listAttributes.append(houseAttributes)
-        housePrice = float(house.priceTranfer)*float(house.area)*1000000
+        housePrice = float(house.priceTranfer)
         listPrice.append(housePrice)
 
 def yearConvert(year):
@@ -138,7 +139,7 @@ def SanitaryCondition(i):
 def HouseNumber(i):
     switcher={
         'có':1.0,
-        'chưa':2.0
+        'chưa':0.0
     }
     return switcher.get(i,0.0)
 
@@ -186,7 +187,7 @@ def currentLandValue(i):
 def diagram(i):
     switcher={
         'có':1.0,
-        'không':2.0
+        'không':0.0
     }
     return switcher.get(i,0.0)
 
@@ -230,8 +231,8 @@ def streetCharacteristics(i):
 
 def store(i):
     switcher={
-        'x':1.0,
-        'có':2.0
+        'x':0.0,
+        'có':1.0
     }
     return switcher.get(i,0.0)
 

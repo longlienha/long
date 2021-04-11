@@ -3,6 +3,7 @@ import numpy as np
 from houseAttributes import House
 from attributesConvert import *
 from sklearn import linear_model
+from sklearn.utils import check_array
 
 def getListHouse(file):
     # file_location = "data.xlsx"
@@ -75,9 +76,7 @@ def lassoRegressionModel(X_train, Y_train, X_test, Y_test):
 def MAPE(Y_actual,Y_Predicted):
     for i in Y_actual:
         if i == 0:
-            i=-1
-        elif i == 0:
-            i=-1
+            i = 0.1
     mape = np.mean(np.abs((Y_actual - Y_Predicted)/Y_actual))*100
     return mape
 
